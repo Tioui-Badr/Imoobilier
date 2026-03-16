@@ -219,14 +219,7 @@ class Particle {
   update() { this.x += this.vx; this.y += this.vy; if (this.x < 0 || this.x > this.W || this.y < 0 || this.y > this.H) this.reset(); }
 }
 
-function SectionLabel({ text }) {
-  return (
-    <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--card-bg)", border: "1px solid var(--card-border)", borderRadius: 20, padding: "4px 14px", marginBottom: 20 }}>
-      <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--accent-color)", display: "inline-block", animation: "pulse 2s infinite" }} />
-      <span style={{ fontSize: 12, fontWeight: 600, color: "var(--accent-color)", letterSpacing: "0.1em", textTransform: "uppercase" }}>{text}</span>
-    </div>
-  );
-}
+
 
 export default function UppCarLanding() {
   const canvasRef = useRef(null);
@@ -237,7 +230,6 @@ export default function UppCarLanding() {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [showScrollButton, setShowScrollButton] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
@@ -316,7 +308,7 @@ export default function UppCarLanding() {
               <ul style={{ display: "flex", gap: 8, listStyle: "none", margin: 0, padding: 0 }}>
                 {[{ l: "Vehicles" }, { l: "Services" }, { l: "Pricing", b: true }, { l: "About Us" }].map(({ l, b }) => (
                   <li key={l}>
-                    <a href="#" className="nav-link" style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                    <a href="/" className="nav-link" style={{ display: "flex", alignItems: "center", gap: 6 }}>
                       {l}
                       {b && <span style={{ background: "var(--accent-gradient)", color: isDarkMode ? "#000" : "#fff", fontSize: 9, padding: "2px 6px", borderRadius: 6, fontWeight: 800, textTransform: "uppercase" }}>New</span>}
                     </a>
@@ -940,7 +932,7 @@ export default function UppCarLanding() {
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: isMobile ? 12 : 16 }}>
                       {links.map((link, li) => (
                         <li key={link} style={{ animation: `footerFadeUp 0.6s ${0.2 + ci * 0.1 + li * 0.05}s ease both` }}>
-                          <a href="#" className="f-link" style={{ fontSize: isMobile ? 14 : 16 }}>{link}</a>
+                          <a href="/" className="f-link" style={{ fontSize: isMobile ? 14 : 16 }}>{link}</a>
                         </li>
                       ))}
                     </ul>
