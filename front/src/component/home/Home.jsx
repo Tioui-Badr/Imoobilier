@@ -957,7 +957,7 @@ export default function UppCarLanding() {
               </div>
               <div style={{ display: "flex", gap: isMobile ? 16 : 32, flexWrap: "wrap", justifyContent: "center" }}>
                 {["Privacy Policy", "Terms of Service", "Cookie Preferences"].map(l => (
-                  <a key={l} href="#" className="f-bottom-link" style={{ fontSize: isMobile ? 13 : 15 }}>{l}</a>
+                  <a key={l} href="/" className="f-bottom-link" style={{ fontSize: isMobile ? 13 : 15 }}>{l}</a>
                 ))}
               </div>
             </div>
